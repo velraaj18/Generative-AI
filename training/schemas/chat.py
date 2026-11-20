@@ -6,6 +6,11 @@ class ChatRequest(BaseModel):
     max_tokens : int = Field(default=500, ge=1, le=2000)
     model : str = Field(default="openai/gpt-oss-120b")
 
+class ChatResponse(BaseModel):
+    question: str
+    answer: str
+    model: str
+
 request = ChatRequest(
     question="Explain embeddings"
 )
